@@ -150,8 +150,7 @@ class CardPaymentScreenState extends State<CardPaymentScreen> {
 
       String apiBase = 'https://api.stripe.com/v1';
       String secretKey =
-          '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';
-      //'sk_test_51J2NG7EQrpNdjijuy2jr4NTF7XcIMbvp4YJMB3JuAzOK9NqGDlZzwq0zoA32QfL6TY5GPhlmPTFsJIuAdPYHoFfO00lMCrmrBS';
+          '';
       String paymentUrl = '$apiBase/payment_intents';
 
       Map<String, dynamic> body = {
@@ -202,9 +201,8 @@ class CardPaymentScreenState extends State<CardPaymentScreen> {
 
     StripePayment.setOptions(StripeOptions(
         publishableKey:
-            'pk_live_51J2NG7EQrpNdjijuLtT8cPJkobCJvkeXjqG2nQDZVKVoZQsS1U9xNzZw0PdTEOFAX56iC5GHHq0tS2BHGglSifiQ00RxqnOqjq'));
-    // publishableKey:
-    //  'pk_test_51J2NG7EQrpNdjijui24x7eECAQ9wAx0Y4ud9WVbHlLWBTcYRrGmKoBx9n6w0EPVBMqbhUs4YUcQEH2aWGsjPJ1y6005QhHCa71'));
+            ''));
+    
   }
 
   @override
