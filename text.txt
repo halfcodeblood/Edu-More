@@ -1,0 +1,49 @@
+Please upgrade using npm install --save firebase-functions@latest in your functions directory.
+
+
+// code for delete a user while deleting firestore document
+
+const functions = require("firebase-functions");
+const admin = require("firebase-admin");
+admin.initializeApp();
+
+// // Create and Deploy Your First Cloud Functions
+// // https://firebase.google.com/docs/functions/write-firebase-functions
+//
+exports.helloWorld = functions.https.onRequest((request, response) => {
+  functions.logger.info("Hello logs!", {structuredData: true});
+  response.send("Hello from Firebase!");
+});
+
+
+exports.deleteUser = functions.firestore
+    .document("users/{userID}")
+    .onDelete((snap, context) => {
+      return admin.auth().deleteUser(snap.id)
+          .then(() => console.log("Deleted user with ID:" + snap.id))
+          .catch((error) => console.error("Error deleting user:", error));
+    });
+
+
+
+The plugins `apple_sign_in, stripe_payment` use a deprecated version of the Android embedding.
+To avoid unexpected runtime failures, or future build failures, try to see if these plugins support the Android V2 embedding. Otherwise, consider removing them since a future release of Flutter will remove these deprecated APIs.
+If you are plugin author, take a look at the docs for migrating the plugin to the V2 embedding: https://flutter.dev/go/android-plugin-migration.
+Launching lib/main.dart on Rishu’s iPad in debug mode...
+Automatically signing iOS for device deployment using specified development team in Xcode project: BM8JLJ4FMJ
+Xcode build done.                                           40.9s
+(lldb) 2021-11-07 01:03:32.451835+0530 Runner[4791:1381362] Writing analzed variants.
+8.8.0 - [Firebase/Core][I-COR000005] No app has been configured yet.
+[VERBOSE-2:FlutterObservatoryPublisher.mm(101)] Failed to register observatory port with mDNS with error -65555.
+[VERBOSE-2:FlutterObservatoryPublisher.mm(103)] On iOS 14+, local network broadcast in apps need to be declared in the app's Info.plist. Debug and profile Flutter apps and modules host VM services on the local network to support debugging features such as hot reload and DevTools. To make your Flutter app or module attachable and debuggable, add a '_dartobservatory._tcp' value to the 'NSBonjourServices' key in your Info.plist for the Debug/Profile configurations. For more information, see https://flutter.dev/docs/development/add-to-app/ios/project-setup#local-network-privacy-permissions
+Writing analzed variants.
+Connecting to the VM Service is taking longer than expected...
+Still attempting to connect to the VM Service...
+If you do NOT see the Flutter application running, it might have crashed. The device logs (e.g. from adb or XCode) might have more details.
+If you do see the Flutter application running on the device, try re-running with --host-vmservice-port to use a specific port known to be available.
+Exception attempting to connect to the VM Service: SocketException: OS Error: Connection refused, errno = 61, address = 127.0.0.1, port = 55642
+This was attempt #50. Will retry in 0:00:01.600000.
+[Common] Error response from snapshot request action of type 1 gave Error Domain=FBSSceneSnapshotErrorDomain Code=3 "an error occurred during a scene snapshotting operation" UserInfo={NSLocalizedDescription=an error occurred during a scene snapshotting operation, NSLocalizedFailureReason=the request was canceled}
+Exception attempting to connect to the VM Service: SocketException: OS Error: Connection refused, errno = 61, address = 127.0.0.1, port = 55734
+This was attempt #100. Will retry in 0:00:01.600000.
+Exited

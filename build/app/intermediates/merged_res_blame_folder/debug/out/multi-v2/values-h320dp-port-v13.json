@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/imrishuroy/Desktop/Flutter Dev/edu_more/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-h320dp-port-v13/values-h320dp-port-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/imrishuroy/.gradle/caches/transforms-2/files-2.1/dc71ceb0e8e89fa5a18f44359f8f58a7/material-1.3.0/res/values-h320dp-port-v13/values-h320dp-port-v13.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,107",
+                        "endColumns": "51,75",
+                        "endOffsets": "102,178"
+                    }
+                }
+            ]
+        }
+    ]
+}
